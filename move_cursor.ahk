@@ -5,11 +5,13 @@ toggle := false ; initialize toggle to false
 
 F10:: ; change F10 to any desired hotkey
  toggle := !toggle ; flip boolean value to turn on/off script
- if toggle
+ if toggle {
   Gosub, MoveCursor
- else
+ }
+ else {
   SetTimer, MoveCursor, off
   MsgBox Script is paused. ; add MsgBox to show when script is not running
+ }
 return
   
 MoveCursor:
